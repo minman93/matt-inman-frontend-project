@@ -1,6 +1,8 @@
 import './App.css';
-import Header from './components/header'
-import AllArticles from './components/all-articles'
+import Header from './components/header';
+import AllArticles from './components/all-articles';
+import { Routes, Route } from 'react-router-dom';
+
 
 
 function App() {
@@ -10,7 +12,10 @@ function App() {
         <Header />
       </header>
       <section>
-        <AllArticles />
+        <Routes>
+          <Route path="/" element= {<AllArticles/>}>
+          </Route>
+        </Routes>
     </section>
     </div>
   );

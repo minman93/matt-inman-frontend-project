@@ -1,5 +1,6 @@
 import {useState} from 'react'
 import {allArticles} from '../api'
+import SingleArticleNav from './single-article-nav'
 // import { useParams } from 'react-router-dom';
 
 
@@ -18,7 +19,7 @@ const AllArticles = () => {
         <li>Votes: {article.votes}</li>
         <li>Date Added: {article.created_at}</li>
         <li>Comments: {article.comment_count}</li>
-        <nav class="nav-text">Read full article...</nav>
+        < SingleArticleNav />
         <br></br>
 
 
