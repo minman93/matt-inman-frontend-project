@@ -135,6 +135,78 @@
               "dash": "draw",
               "scale": 1
             }
+          },
+          "ca743630-a3ef-4b89-1f6c-d5e5a52c6570": {
+            "id": "ca743630-a3ef-4b89-1f6c-d5e5a52c6570",
+            "type": "rectangle",
+            "name": "Rectangle",
+            "parentId": "page",
+            "childIndex": 5,
+            "point": [
+              -48.31,
+              39.08
+            ],
+            "size": [
+              242.52,
+              335.83
+            ],
+            "rotation": 0,
+            "style": {
+              "color": "black",
+              "size": "small",
+              "isFilled": false,
+              "dash": "draw",
+              "scale": 1
+            },
+            "label": "",
+            "labelPoint": [
+              0.5,
+              0.5
+            ]
+          },
+          "f33d1900-6f0f-46ec-0b12-d113a69ea6dd": {
+            "id": "f33d1900-6f0f-46ec-0b12-d113a69ea6dd",
+            "type": "text",
+            "name": "Text",
+            "parentId": "page",
+            "childIndex": 6,
+            "point": [
+              33.25,
+              45.24
+            ],
+            "rotation": 0,
+            "text": "TASKS",
+            "style": {
+              "color": "black",
+              "size": "small",
+              "isFilled": false,
+              "dash": "draw",
+              "scale": 1,
+              "font": "script",
+              "textAlign": "middle"
+            }
+          },
+          "8b47cf07-80bb-4f58-3a16-36563fd075c3": {
+            "id": "8b47cf07-80bb-4f58-3a16-36563fd075c3",
+            "type": "text",
+            "name": "Text",
+            "parentId": "page",
+            "childIndex": 7,
+            "point": [
+              -48.99,
+              97.43
+            ],
+            "rotation": 0,
+            "text": "- view all articles\n- view individual article\n- view comments associ-\nated with specific article\n- vote on an article\n- post comment to article\n- view separate page for \neach topic ",
+            "style": {
+              "color": "black",
+              "size": "small",
+              "isFilled": false,
+              "dash": "draw",
+              "scale": 1,
+              "font": "script",
+              "textAlign": "middle"
+            }
           }
         },
         "bindings": {}
