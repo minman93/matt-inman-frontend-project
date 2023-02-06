@@ -36,3 +36,21 @@
     transform: rotate(360deg);
   }
 }
+header {
+  text-align: center;
+  font-size: xx-large;
+  
+}
+.all-articles {
+  text-align: center;
+  list-style-type: none;
+  border: #282c34;
+  border-radius: 5px;
+}
+.article-title{
+  font-size:x-large
+}
+.nav-text{
+  color: blue;
+}
+
