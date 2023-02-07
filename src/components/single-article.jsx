@@ -6,7 +6,7 @@ import Comments from "./comments"
 
 const SingleArticle = () => {
    const [article, setArticle] = useState({})
-   const [isLoading, setIsLoading] = useState(false)
+   const [isLoading, setIsLoading] = useState(true)
     
     const {article_id} = useParams();
 
@@ -21,10 +21,7 @@ const SingleArticle = () => {
 
         if(isLoading) return <p>Loading...</p>
 
-        return <section className="single-article">
-=======
-    if(isLoading) return <p className="loading">Loading...</p>
-        return <section className="all-articles">
+        else return <section className="single-article">
         
             <li className="article-title">{article.title}</li>
             <br></br>

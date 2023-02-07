@@ -7,7 +7,7 @@ import {Link} from 'react-router-dom';
 
 const AllArticles = () => {
     const [articles, setArticles] = useState([])
-    const [isLoading, setIsLoading] = useState(false)
+    const [isLoading, setIsLoading] = useState(true)
 
     useEffect(() => {
         setIsLoading(true)
@@ -20,7 +20,7 @@ const AllArticles = () => {
 
     if (isLoading) return <p className="loading">Loading...</p>
 
-    return (<ul>
+    else return (<ul>
        <h2 className="h2"> ALL ARTICLES </h2>
     {articles.map((article) => {
         return <section key={article.article_id} className="all-articles">
