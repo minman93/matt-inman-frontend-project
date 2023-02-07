@@ -5,15 +5,19 @@ import { useParams } from 'react-router-dom'
 
 const SingleArticle = () => {
    const [article, setArticle] = useState({})
+   const [isLoading, setIsLoading] = useState(false)
     
     const {article_id} = useParams();
 
     useEffect(() => {
+        setIsLoading(true)
         singleArticle(article_id).then((data) => {
             setArticle(data)
+            setIsLoading(false)
 
         })
     }, [])
+    if(isLoading) return <p className="loading">Loading...</p>
         return <section className="all-articles">
             <li className="article-title">{article.title}</li>
             <br></br>
