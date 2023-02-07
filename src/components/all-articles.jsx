@@ -7,13 +7,16 @@ import {Link} from 'react-router-dom';
 
 const AllArticles = () => {
     const [articles, setArticles] = useState([])
+    const [isLoading, setIsLoading] = useState(false)
 
     useEffect(() => {
-
+        setIsLoading(true)
         allArticles().then((data) => {
             setArticles(data.articles)
+            setIsLoading(false)
         })
     }, [])
+        if (isLoading) return <p>Loading...</p>
 
 
 
