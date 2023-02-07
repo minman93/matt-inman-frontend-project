@@ -1,6 +1,7 @@
-import { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
-import {commentsFunc} from '../api'
+import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import {commentsFunc} from '../api';
+import dayjs from 'dayjs';
 
 const Comments = () => {
     const [comments, setComments] = useState([])
@@ -18,9 +19,11 @@ const Comments = () => {
         <h2 className="h2">COMMENTS</h2>
     <ul>
         {comments.map((comment) => {
+            const date = dayjs(comment.created_at).format('DD-MM-YYYY')
+
             return <section className="comments"><li>Username: {comment.author}</li>
             <br></br>
-        <li>Date Created: {comment.created_at}</li>
+        <li>Date Created: {date}</li>
         <br></br>
         <li>{comment.body}</li>
         <br></br>

@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import { singleArticle } from '../api'
 import { useParams } from 'react-router-dom'
 import Comments from "./comments"
+import dayjs from 'dayjs';
 
 const SingleArticle = () => {
    const [article, setArticle] = useState({})
@@ -18,6 +19,7 @@ const SingleArticle = () => {
 
         })
     }, [])
+        const date = dayjs(article.created_at).format('DD-MM-YYYY')
 
         if(isLoading) return <p>Loading...</p>
 
@@ -27,7 +29,7 @@ const SingleArticle = () => {
             <br></br>
             <img src={article.article_img_url} alt=""></img>
             <li>Written by: {article.author}</li>
-            <li>Date Added: {article.created_at}</li>
+            <li>Date Added: {date}</li>
             <br></br>
             <p className="article-text">{article.body}</p>
             <br></br>

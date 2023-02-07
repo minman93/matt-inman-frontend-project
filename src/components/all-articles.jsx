@@ -1,6 +1,7 @@
 import {useState, useEffect} from 'react'
 import {allArticles} from '../api';
 import {Link} from 'react-router-dom';
+import dayjs from 'dayjs'
 
 
 
@@ -23,13 +24,15 @@ const AllArticles = () => {
     else return (<ul>
        <h2 className="h2"> ALL ARTICLES </h2>
     {articles.map((article) => {
+        const date = dayjs(article.created_at).format('DD-MM-YYYY');
+
         return <section key={article.article_id} className="all-articles">
             <Link to={`/articles/${article.article_id}`}>
         <li className="article-title">{article.title} </li> 
         <img src={article.article_img_url} alt=""></img>
         <li>Topic: {article.topic}</li>
         <li>Votes: {article.votes}</li>
-        <li>Date Added: {article.created_at}</li>
+        <li>Date Added: {date}</li>
         <li>Comments: {article.comment_count}</li>
         
 
