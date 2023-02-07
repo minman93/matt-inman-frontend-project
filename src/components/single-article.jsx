@@ -5,9 +5,14 @@ import { useParams } from 'react-router-dom'
 import Comments from "./comments"
 import dayjs from 'dayjs';
 
+
+
+
 const SingleArticle = () => {
    const [article, setArticle] = useState({})
    const [isLoading, setIsLoading] = useState(true)
+   const [vote, setVote] = useState(false)
+
     
     const {article_id} = useParams();
 
@@ -19,8 +24,15 @@ const SingleArticle = () => {
 
         })
     }, [])
-        const date = dayjs(article.created_at).format('DD-MM-YYYY')
 
+    const increaseVotes = () => {
+
+        }
+    
+        const date = dayjs(article.created_at).format('DD-MM-YYYY')
+    
+
+        
         if(isLoading) return <p>Loading...</p>
 
         else return <section className="single-article">
@@ -34,6 +46,7 @@ const SingleArticle = () => {
             <p className="article-text">{article.body}</p>
             <br></br>
             <li>Votes: {article.votes}</li>
+            <button onClick={increaseVotes}>Upvote!</button>
             <br></br>
             <br></br>
 

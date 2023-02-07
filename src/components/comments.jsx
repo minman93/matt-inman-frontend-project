@@ -11,7 +11,6 @@ const Comments = () => {
 
     useEffect(() => {
         commentsFunc(article_id).then((data) => {
-            console.log(data)
             setComments(data)
         })
     }, [])
