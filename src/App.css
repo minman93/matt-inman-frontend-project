@@ -53,4 +53,12 @@ header {
 .nav-text{
   color: blue;
 }
+a {
+  text-decoration: none;
+  color: blue
+}
+.h2{
+  text-align: center;
+}
+
 
