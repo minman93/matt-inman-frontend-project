@@ -18,7 +18,7 @@ const AllArticles = () => {
     }, [])
         if (isLoading) return <p>Loading...</p>
 
-
+    if (isLoading) return <p className="loading">Loading...</p>
 
     return (<ul>
        <h2 className="h2"> ALL ARTICLES </h2>

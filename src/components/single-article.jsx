@@ -18,9 +18,14 @@ const SingleArticle = () => {
 
         })
     }, [])
+
         if(isLoading) return <p>Loading...</p>
 
         return <section className="single-article">
+=======
+    if(isLoading) return <p className="loading">Loading...</p>
+        return <section className="all-articles">
+        
             <li className="article-title">{article.title}</li>
             <br></br>
             <img src={article.article_img_url} alt=""></img>
