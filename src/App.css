@@ -44,8 +44,8 @@ header {
 .all-articles {
   text-align: center;
   list-style-type: none;
-  border: #282c34;
-  border-radius: 5px;
+  border:2px solid #000;
+  padding:20px;
 }
 .article-title{
   font-size:x-large
@@ -60,5 +60,26 @@ a {
 .h2{
   text-align: center;
 }
+.comments{
+  margin-left: auto;
+  text-align: left;
+  margin-right: auto;
+  width: 40em;
+  list-style-type: none;
+  border:2px solid #000;
+  padding:20px;
+}
+.single-article {
+  text-align: center;
+  list-style-type: none;
+}
+.article-text {
+  margin-left: auto;
+  text-align: left;
+  margin-right: auto;
+  width: 40em;
+  font-size: large
+}
+
 
 

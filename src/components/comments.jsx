@@ -14,7 +14,25 @@ const Comments = () => {
             setComments(data)
         })
     }, [])
-    return <p> HELLO</p>
-
+    return <section> 
+        <h2 className="h2">COMMENTS</h2>
+    <ul>
+        {comments.map((comment) => {
+            return <section className="comments"><li>Username: {comment.author}</li>
+            <br></br>
+        <li>Date Created: {comment.created_at}</li>
+        <br></br>
+        <li>{comment.body}</li>
+        <br></br>
+        <li>Votes: {comment.votes}</li>
+        <br></br>
+        </section>
+    })}
+        
+    </ul>
+    </section>
 }
+
+
+
 export default Comments

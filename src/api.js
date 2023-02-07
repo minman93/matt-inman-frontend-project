@@ -12,6 +12,5 @@ export function singleArticle(article_id){
         }
 export function commentsFunc(article_id){
         return axios.get(`https://matt-inman-backend-project.onrender.com/api/articles/${article_id}/comments`).then(({data}) => {
-            console.log(data)
             return data})
         }
