@@ -4,6 +4,7 @@ import { singleArticle } from '../api'
 import { useParams } from 'react-router-dom'
 import Comments from "./comments"
 import dayjs from 'dayjs';
+import Votes from './change-vote'
 
 
 
@@ -11,7 +12,7 @@ import dayjs from 'dayjs';
 const SingleArticle = () => {
    const [article, setArticle] = useState({})
    const [isLoading, setIsLoading] = useState(true)
-   const [vote, setVote] = useState(false)
+   
 
     
     const {article_id} = useParams();
@@ -25,9 +26,6 @@ const SingleArticle = () => {
         })
     }, [])
 
-    const increaseVotes = () => {
-
-        }
     
         const date = dayjs(article.created_at).format('DD-MM-YYYY')
     
@@ -45,9 +43,7 @@ const SingleArticle = () => {
             <br></br>
             <p className="article-text">{article.body}</p>
             <br></br>
-            <li>Votes: {article.votes}</li>
-            <button onClick={increaseVotes}>Upvote!</button>
-            <br></br>
+            <Votes votes={article.votes} article_id={article_id}/>
             <br></br>
 
 
