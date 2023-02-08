@@ -9,6 +9,7 @@ import Votes from './change-vote'
 
 
 
+
 const SingleArticle = () => {
    const [article, setArticle] = useState({})
    const [isLoading, setIsLoading] = useState(true)
@@ -46,7 +47,7 @@ const SingleArticle = () => {
             <Votes votes={article.votes} article_id={article_id}/>
             <br></br>
 
-
+            
             <Comments/>
         </section>
         

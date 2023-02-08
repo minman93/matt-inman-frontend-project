@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import {commentsFunc} from '../api';
 import dayjs from 'dayjs';
+import AddComment from './add-comment'
 
 const Comments = () => {
     const [comments, setComments] = useState([])
@@ -16,6 +17,7 @@ const Comments = () => {
     }, [])
     return <section> 
         <h2 className="h2">COMMENTS</h2>
+        <AddComment article_id={article_id} comment={comments.body}/>
     <ul>
         {comments.map((comment) => {
             const date = dayjs(comment.created_at).format('DD-MM-YYYY')
@@ -28,6 +30,7 @@ const Comments = () => {
         <br></br>
         <li>Votes: {comment.votes}</li>
         <br></br>
+        
         </section>
     })}
         
