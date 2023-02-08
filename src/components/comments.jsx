@@ -11,7 +11,6 @@ const Comments = () => {
 
     useEffect(() => {
         commentsFunc(article_id).then((data) => {
-            console.log(data)
             setComments(data)
         })
     }, [])
@@ -21,7 +20,7 @@ const Comments = () => {
         {comments.map((comment) => {
             const date = dayjs(comment.created_at).format('DD-MM-YYYY')
 
-            return <section className="comments"><li>Username: {comment.author}</li>
+            return <section key={comment.comment_id} className="comments"><li>Username: {comment.author}</li>
             <br></br>
         <li>Date Created: {date}</li>
         <br></br>
