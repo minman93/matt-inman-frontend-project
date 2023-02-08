@@ -15,9 +15,10 @@ const Comments = () => {
             setComments(data)
         })
     }, [])
+    console.log(comments, "<-------- COMMENTS ARRAY")
     return <section> 
         <h2 className="h2">COMMENTS</h2>
-        <AddComment article_id={article_id} comment={comments.body}/>
+        <AddComment article_id={article_id} comments={comments}/>
     <ul>
         {comments.map((comment) => {
             const date = dayjs(comment.created_at).format('DD-MM-YYYY')

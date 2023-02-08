@@ -1,14 +1,17 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { addComment } from "../api";
 
-const AddComment = ({article_id, comment}) => {
+const AddComment = ({article_id, comments}) => {
+    console.log(article_id, "<------ ARTICLE ID")
+    console.log(comments, "<--------- COMMENTS")
     const [submit, setSubmit] = useState();
-    const [newComment, setNewComment] = useState({'author': '', 'body': ''});
+    const [newComment, setNewComment] = useState({author: '', body: ''});
 
-    const useEffect = () => {
-        addComment(article_id, comment).then((data) => {
-        return data
-    }, [])}
+        useEffect((article_id, comment) => {
+            
+            addComment(article_id).then((data)=>{
+            })
+        }, [])
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -34,6 +37,7 @@ const AddComment = ({article_id, comment}) => {
                 setNewComment((currComment) => {
                     const commentCopy = {...currComment}
                     commentCopy.body = e.target.value;
+                    console.log(commentCopy)
                     return commentCopy
                 })
             }}  id="body" value={newComment.body}>

@@ -22,7 +22,7 @@ export function changeVote(article_id, vote){
 }
 export function addComment(article_id, comment){
     return axios.post(`https://matt-inman-backend-project.onrender.com/api/articles/${article_id}/comments`, comment).then(({data}) => {
-        console.log(data)
+    
     return data
     
     })
