@@ -17,6 +17,7 @@ const AllArticles = () => {
             setIsLoading(false)
         })
     }, [])
+        
         if (isLoading) return <p>Loading...</p>
 
     if (isLoading) return <p className="loading">Loading...</p>

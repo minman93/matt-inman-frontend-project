@@ -20,3 +20,7 @@ export function changeVote(article_id, vote){
         return data
     })
 }
+export function getTopics(){
+    return axios.get(`https://matt-inman-backend-project.onrender.com/api/topics`).then(({data}) => {
+        return data})
+}
