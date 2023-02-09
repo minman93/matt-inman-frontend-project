@@ -2,6 +2,9 @@ import {useState, useEffect} from 'react'
 import {allArticles} from '../api';
 import {Link} from 'react-router-dom';
 import dayjs from 'dayjs'
+import { useParams } from 'react-router-dom';
+import axios from 'axios';
+
 
 
 
@@ -10,7 +13,17 @@ const AllArticles = () => {
     const [articles, setArticles] = useState([])
     const [isLoading, setIsLoading] = useState(true)
 
+    const{topic} = useParams()
+
     useEffect(() => {
+        if(topic) {
+            setIsLoading(true)
+            axios.get(`https://matt-inman-backend-project.onrender.com/api/topics/${topic}`).then((data) => {
+                console.log(data)
+                setArticles(data)
+                setIsLoading(false)
+            })
+        } else
         setIsLoading(true)
         allArticles().then((data) => {
             setArticles(data.articles)
@@ -22,7 +35,9 @@ const AllArticles = () => {
 
     if (isLoading) return <p className="loading">Loading...</p>
 
-    else return (<ul>
+    else return <section>
+        
+        <ul>
        <h2 className="h2"> ALL ARTICLES </h2>
     {articles.map((article) => {
         const date = dayjs(article.created_at).format('DD-MM-YYYY');
@@ -45,5 +60,6 @@ const AllArticles = () => {
         </section>
     })}
    </ul>)
+   </section>
 }
 export default AllArticles

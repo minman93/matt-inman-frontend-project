@@ -11,7 +11,6 @@ const TopicsNav = () => {
 
     })
  }, [])
-    console.log(topics)
 
     
     return <nav>
