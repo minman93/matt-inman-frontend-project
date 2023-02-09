@@ -13,11 +13,18 @@ const TopicsNav = () => {
  }, [])
 
     
-    return <nav>
+    return <section className="navi">
+         <Link key="all-articles" to={`/`}className="navi">ALL ARTICLES</Link>
+        <br></br>
+        <br></br>
+        <nav>
         {topics.map((topic) => {
-            return <Link key={topic.slug} to={`/topic/${topic.slug}`}>{topic.slug.toUpperCase()}</Link>
+            return <Link key={topic.slug} to={`/topics/${topic.slug}`} className="navismaller">{topic.slug.toUpperCase()} ARTICLES <br></br></Link>
+           
         })}
+
     </nav>
+    </section>
 }
 
 export default TopicsNav

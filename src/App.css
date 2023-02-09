@@ -82,11 +82,23 @@ a {
   font-size: large
 }
 
-=======
+
 .loading {
   font-size: xx-large;
   text-align: center;
 }
+.navi{
+  font: black;
+  font-size: x-large;
+  text-align: center;
 
+}
+
+.navismaller{
+  font: black;
+  font-size: large;
+  text-align: center;
+  
+}
 
 
