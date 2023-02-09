@@ -28,3 +28,8 @@ export function addComment(article_id, addedComment, username){
     
     })
 }
+export function getTopics(){
+    return axios.get(`https://matt-inman-backend-project.onrender.com/api/topics`).then(({data}) => {
+        return data})
+
+}
