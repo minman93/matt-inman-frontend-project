@@ -24,7 +24,7 @@ const AllArticles = () => {
             setIsLoading(false)
         })
     }, [topic, sortBy])
-    console.log(sortBy)
+
         
         if (isLoading) return <p>Loading...</p>
 
@@ -33,8 +33,8 @@ const AllArticles = () => {
     else return <section>
   
         <p className="sort-by">Sort by:
-       <Link key="sort-by-author"to="?sortBy=author"><button onClick={() => setSortBy('author')}>Author</button></Link>
-       <Link key="sort-by-votes"to="?sortBy=votes"><button onClick={() => setSortBy('votes')}>Votes</button></Link>
+       <button onClick={() => setSortBy('author')}>Author</button>
+       <button onClick={() => setSortBy('votes')}>Votes</button>
         <button onClick={() => setSortBy('topic')}>Topic</button>
         <button onClick={() => setSortBy('comment_count')}>Number of Comments</button></p>
         

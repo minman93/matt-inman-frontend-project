@@ -2,10 +2,10 @@ import axios from 'axios';
 
 export function allArticles(topic, sortBy){
     if(topic){
-    return axios.get(`https://matt-inman-backend-project.onrender.com/api/articles?topic=${topic}`, sortBy).then(({data}) => {
+    return axios.get(`https://matt-inman-backend-project.onrender.com/api/articles?topic=${topic}&sortBy=${sortBy}`).then(({data}) => {
         
         return data})}
-    else return axios.get(`https://matt-inman-backend-project.onrender.com/api/articles`).then(({data}) => {
+    else return axios.get(`https://matt-inman-backend-project.onrender.com/api/articles?sortBy=${sortBy}`).then(({data}) => {
         return data})
 
     }
