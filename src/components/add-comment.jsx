@@ -1,15 +1,23 @@
 import { useState } from "react";
 import { addComment } from "../api";
 
-const AddComment = ({article_id}) => {
+const AddComment = ({article_id, setComments}) => {
     const username = 'grumpy19'
     const [newComment, setNewComment] = useState('');
 
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        addComment(article_id, newComment, username)
-        setNewComment('')
+        if (newComment.length >= 1) {
+
+        addComment(article_id, newComment, username).then((comment) => {
+            setComments((currentComments) => {
+                console.log(comment)
+                console.log(currentComments)
+                return [comment,...currentComments]
+            })
+            setNewComment('')
+        })}
     }
     
     

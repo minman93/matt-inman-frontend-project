@@ -13,7 +13,7 @@ import Votes from './change-vote'
 const SingleArticle = () => {
    const [article, setArticle] = useState({})
    const [isLoading, setIsLoading] = useState(true)
-   
+   const [err, setErr] = useState(null)
 
     
     const {article_id} = useParams();
@@ -24,15 +24,25 @@ const SingleArticle = () => {
             setArticle(data)
             setIsLoading(false)
 
-        })
+        }).catch((err)  => {
+            console.log(err)
+            setErr(err)
+        });
     }, [])
 
     
         const date = dayjs(article.created_at).format('DD-MM-YYYY')
     
-
+        if(err) {
+            return (
+                <section>
+                    <p> 404 - article not found</p>
+                </section>
+            )
+        }
         
         if(isLoading) return <p>Loading...</p>
+
 
         else return <section className="single-article">
         
