@@ -33,7 +33,7 @@ const AllArticles = () => {
             console.log(err)
             setErr(err)
         });
-    }, [topic])
+    }, [topic, sortBy])
        
         if(err) {
             return (
@@ -43,8 +43,6 @@ const AllArticles = () => {
         )
     }
 
-        })
-    }, [topic, sortBy])
 
         
 
@@ -57,7 +55,6 @@ const AllArticles = () => {
         <p className="sort-by">Sort by:
        <button onClick={() => setSortBy('author')}>Author</button>
        <button onClick={() => setSortBy('votes')}>Votes</button>
-        <button onClick={() => setSortBy('topic')}>Topic</button>
         <button onClick={() => setSortBy('comment_count')}>Number of Comments</button></p>
         
         
