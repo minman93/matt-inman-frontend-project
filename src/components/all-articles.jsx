@@ -12,6 +12,9 @@ import { useParams } from 'react-router-dom';
 const AllArticles = () => {
     const [articles, setArticles] = useState([])
     const [isLoading, setIsLoading] = useState(true)
+    const [err, setErr] = useState(null)
+
+    
 
     const{topic} = useParams()
 
@@ -21,9 +24,19 @@ const AllArticles = () => {
         allArticles(topic).then((data) => {
             setArticles(data.articles)
             setIsLoading(false)
-        })
+        }).catch((err)  => {
+            console.log(err)
+            setErr(err)
+        });
     }, [topic])
-        
+       
+        if(err) {
+            return (
+             <section>
+                <p> 404 - article not found</p>
+            </section>
+        )
+    }
         if (isLoading) return <p>Loading...</p>
 
     if (isLoading) return <p className="loading">Loading...</p>
@@ -52,7 +65,7 @@ const AllArticles = () => {
         </Link>
         </section>
     })}
-   </ul>)
+   </ul>
    </section>
 }
 export default AllArticles
